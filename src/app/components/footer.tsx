@@ -5,15 +5,15 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-800 text-white py-4">
       <div className="container mx-auto text-center">
         <p className="text-md">
-          Developed by <span className="font-bold">Pasindu Bhanuka</span>
+          Developed by The Marketing Team of the <span className="font-bold">AIESEC in Greece</span>
         </p>
         <a
-          href="https://www.pasindubhanuka.com"
+          href="https://aiesec.gr/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:underline"
         >
-          www.pasindubhanuka.com
+          www.aiesec.gr
         </a>
       </div>
     </footer>

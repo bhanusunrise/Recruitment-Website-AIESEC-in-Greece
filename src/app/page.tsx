@@ -116,8 +116,8 @@ export default function Home() {
       </div>
 
       <div className="text-center pb-40 pl-10 pr-10 pt-40 z-10" id="reviews">
-        <p className="text-5xl font-semibold text-white text-center">Why Choose Australia</p>
-        <p className="text-lg text-white mt-10">Discover Australia&apos;s beauty, opportunities, and multicultural charm for everyone.</p>
+        <p className="text-5xl font-semibold text-white text-center">What People Say</p>
+        <p className="text-lg text-white mt-10">Enhance your experience with AIESEC in Greece.</p>
 <div className="grid grid-cols-3 gap-2 mt-20">
   <div className="p-4 bg-white/50 rounded-3xl hover:bg-white/80">
     <div className="flex">

@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 
 const initialNavigation = [
   { name: 'Home', href: '#home', current: true },
-  { name: 'About Us', href: '#about', current: false },
-  { name: 'Explore', href: '#explore', current: false },
+  { name: 'About ESTs', href: '#about', current: false },
+  { name: 'Available Positions', href: '#explore', current: false },
   { name: 'Gallery', href: '#gallery', current: false },
   { name: 'Reviews', href: '#reviews', current: false },
 ];
