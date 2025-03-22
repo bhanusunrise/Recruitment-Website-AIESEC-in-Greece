@@ -1,6 +1,6 @@
 import React from "react";
-import { COLORS } from "../constants"; // Import color variables
-
+import { COLORS } from "../constants"; 
+import CustomSelect from "./select";
 const RegistrationForm = () => {
   return (
     <form className="">
@@ -28,6 +28,12 @@ const RegistrationForm = () => {
           </div>
         ))}
       </div>
+      <CustomSelect 
+  select_value_names={["Graphic Designer", "Video Editor", "Photographer"]} 
+  select_value_values={[ "graphic_designer", "video_editor", "photographer"]} 
+  name="position"
+  placeholder="position"
+/>
       {[
         { name: "aiesec_email", type: "email", label: "AIESEC Email" },
         { name: "personal_email", type: "email", label: "Personal Email" },
@@ -36,6 +42,7 @@ const RegistrationForm = () => {
         { name: "phptp_link", type: "text", label: "Photo Link" },
       ].map(({ name, type, label }) => (
         <div className="relative z-0 w-full mb-5 group" key={name}>
+
           <input
             type={type}
             name={name}
@@ -53,19 +60,19 @@ const RegistrationForm = () => {
         </div>
       ))}
 
-      
+
+      <button
+        type="submit"
+        className={`font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-5 ${COLORS.buttonPrimary} ${COLORS.buttonFocus}`}
+      >
+        Submit
+      </button>      
       
       <button
         type="reset"
-        className={`font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mr-5 bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white`}
+        className={`font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-gray-400 hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white`}
       >
         Reset
-      </button>
-      <button
-        type="submit"
-        className={`font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ${COLORS.buttonPrimary} ${COLORS.buttonFocus}`}
-      >
-        Submit
       </button>
     </form>
   );
