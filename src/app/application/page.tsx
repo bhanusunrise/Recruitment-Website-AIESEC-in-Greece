@@ -1,5 +1,5 @@
-import Button from "../components/button";
 import Image from "next/image";
+import RegistrationForm from "../components/registration_form";
 
 export default function application(){
 
@@ -22,7 +22,20 @@ export default function application(){
                 <div className="column p-4">
                     <Image src="/greece_2.jpg" alt="Greece_2" width={1200} height={1200} className="rounded-3xl hover:opacity-80"/>
                 </div>
-            </div>        
+            </div>    
+            <div className="columns-3 pb-40 pt-40 pl-10 pr-10 bg-blue-500 flex z-10" id="about">
+                
+                <div className="column p-4">
+                    <Image src="/greece_2.jpg" alt="Greece_2" width={500} height={500} className="rounded-3xl hover:opacity-90"/>
+                </div>
+                <div className="flex flex-col justify-center col-span-2 px-10">
+                    <p className="text-5xl font-semibold text-gray-100 mb-10">Get Registered</p>
+                    <RegistrationForm/>
+
+
+
+                </div>
+            </div>            
         </>
     )
 }
