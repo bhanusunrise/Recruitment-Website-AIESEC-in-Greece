@@ -75,9 +75,9 @@ export default function NavBar() {
       return 'bg-transparent'; // Transparent background for Home
     }
     if (['About Us', 'Explore', 'Gallery'].includes(currentSection?.name || '')) {
-      return 'bg-gray-800/90'; // Semi-transparent dark background for other sections
+      return 'bg-blue-400/90'; // Semi-transparent dark background for other sections
     }
-    return 'bg-gray-900'; // Default dark background
+    return 'bg-blue-500'; // Default dark background
   };
 
   return (
@@ -86,7 +86,7 @@ export default function NavBar() {
       className={classNames(
         'navbar-custom fixed top-0 w-full z-50', // Fixed positioning and full width
         getNavbarBgClass(),
-        'text-gray-200 hover:bg-gray-900',
+        'text-gray-200 hover:bg-blue-400',
         'transition-all duration-500 ease-in-out' // Adding transition for smooth background color change
       )}
     >
@@ -96,7 +96,7 @@ export default function NavBar() {
             <p className="text-2xl font-bold">Entity Support Teams</p>
           </div>
           <div className="flex items-center sm:hidden">
-            <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-blue-600 hover:bg-blue-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="block h-6 w-6 group-data-[open]:hidden" aria-hidden="true" />
               <XMarkIcon className="hidden h-6 w-6 group-data-[open]:block" aria-hidden="true" />
@@ -115,8 +115,8 @@ export default function NavBar() {
                 className={classNames(
                   'rounded-md px-3 py-2 text-lg font-medium transition-all duration-300 ease-in-out', // Added transition classes
                   item.current
-                    ? 'bg-gray-100 text-gray-900'
-                    : 'text-gray-100 hover:bg-gray-800 hover:text-white'
+                    ? 'bg-blue-100 text-blue-900'
+                    : 'text-gray-100 hover:bg-blue-400 hover:text-white'
                 )}
               >
                 {item.name}
@@ -141,8 +141,8 @@ export default function NavBar() {
               className={classNames(
                 'block rounded-md px-3 py-2 text-base font-medium transition-all duration-300 ease-in-out', // Added transition classes
                 item.current
-                  ? 'bg-gray-900 text-white'
-                  : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                  ? 'bg-blue-900 text-white'
+                  : 'text-gray-300 hover:bg-blue-400 hover:text-white'
               )}
             >
               {item.name}

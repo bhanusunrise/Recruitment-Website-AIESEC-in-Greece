@@ -89,7 +89,7 @@ export default function Home() {
       </div>
       <div>
         <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-10 mr-10">Download Booklet</button>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-10">Apply Now</button>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-10"><a href="/application">Apply Now</a></button>
       </div>
       </div>
 
