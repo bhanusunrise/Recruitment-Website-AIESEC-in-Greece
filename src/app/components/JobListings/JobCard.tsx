@@ -5,11 +5,12 @@ import { JobCardProps } from '../../types';
 import Link from 'next/link';
 
 const JobCard: React.FC<JobCardProps> = ({ job }) => {
-  const [expanded, setExpanded] = useState<boolean>(false);
-  
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform hover:-translate-y-1">
-      <div className="h-2 bg-blue-500"></div>
+    <div className={`relative bg-white shadow-md hover:shadow-lg overflow-visible ${expanded ? '' : 'rounded-lg'}`}>
+      {/* Header */}
+      <div className="h-2 bg-blue-500 rounded-t-lg"></div>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2 text-gray-700">{job.title}</h3>
         <div className="flex items-center text-blue-500 font-medium mb-2">
@@ -31,32 +32,38 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
             {job.type}
           </span>
         </div>
-        
-        <button 
-          className="flex items-center justify-between w-full text-blue-500 border border-blue-500 rounded px-4 py-2 mb-4 hover:bg-blue-50 transition-colors"
+        <button
+          type="button"
           onClick={() => setExpanded(!expanded)}
+          className="flex items-center justify-between w-full text-blue-500 border border-blue-500 rounded px-4 py-2 hover:bg-blue-50 transition-colors"
         >
-          <span>{expanded ? "View Less" : "View Details"}</span>
-          <ChevronDown 
-            size={18} 
-            className={`transition-transform ${expanded ? "transform rotate-180" : ""}`} 
+          <span>{expanded ? 'View Less' : 'View Details'}</span>
+          <ChevronDown
+            size={18}
+            className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`}
           />
         </button>
-        
-        {expanded && (
-          <div className="mt-4 pt-4 border-t border-gray-100">
-            <BulletList items={job.responsibilities} title="Responsibilities" />
-            <BulletList items={job.requirements} title="Requirements" />
-            <BulletList items={job.benefits} title="Benefits" />
-          </div>
-        )}
-        
-        <Link 
-          href={`/apply?job=${job.id}`}
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-5 rounded-md font-medium transition-colors"
-        >
-          Apply Now
+        <Link href={`/job/${job.id}`}>
+          <span className="block text-center text-blue-500 font-semibold mt-4 hover:underline">
+            Apply Now
+          </span>
         </Link>
+      </div>
+
+      {/* Animated details panel - absolutely positioned so it doesn't affect grid row height */}
+      <div
+        className="absolute left-0 w-full bg-white rounded-b-lg border-t border-gray-100 shadow-md overflow-hidden transition-transform duration-300 ease-in-out z-10"
+        style={{
+          top: '100%',
+          transformOrigin: 'top',
+          transform: expanded ? 'scaleY(1)' : 'scaleY(0)',
+        }}
+      >
+        <div className="p-6">
+          <BulletList items={job.responsibilities} title="Responsibilities" />
+          <BulletList items={job.requirements} title="Requirements" />
+          <BulletList items={job.benefits} title="Benefits" />
+        </div>
       </div>
     </div>
   );
