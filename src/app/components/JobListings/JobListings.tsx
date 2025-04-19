@@ -8,8 +8,8 @@ const JobListings: React.FC<JobListingsProps> = ({ jobs }) => {
     <section className="py-16">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2 text-gray-700">Available Positions</h2>
-          <p className="text-lg text-gray-500">Explore our current opportunities and find your perfect role</p>
+          <h2 className="text-3xl font-bold mb-2 text-gray-100">Available Positions</h2>
+          <p className="text-lg text-gray-50">Explore our current opportunities and find your perfect role</p>
         </div>
         
         {jobs.length > 0 ? (
